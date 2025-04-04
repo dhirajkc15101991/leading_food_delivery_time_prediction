@@ -72,3 +72,16 @@ You can configure remotes, cache location, and more here.
 This file ensures Git ignores DVC's internal files that shouldn’t be committed (like cache or temp data).
 It usually contains:
 /cache/
+===============================================
+⚠️ Why are .dvc/ files being tracked by Git?
+Even though DVC manages large data files separately, some DVC files are meant to be committed, especially:
+
+.dvc/config → tracks DVC settings (required)
+
+.dvc/.gitignore → tells Git to ignore large file caches
+
+.dvcignore → tells DVC what to ignore (like temp files)
+
+These files are text metadata and help others reproduce your DVC setup — that's why Git tracks them.
+
+✅ They are supposed to be committed to Git. Only bulky files (like datasets, model binaries) are stored outside Git.
