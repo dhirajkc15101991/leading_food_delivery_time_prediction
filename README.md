@@ -55,3 +55,20 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+Steps for dvc setup:
+
+1.dvc init
+
+It creates a .dvc/ folder, which contains DVC’s internal config and state files.
+
+.dvc/config:
+This is the configuration file for DVC. It stores default settings such as:
+[core]
+    remote = storage
+You can configure remotes, cache location, and more here.
+
+.dvc/.gitignore:
+This file ensures Git ignores DVC's internal files that shouldn’t be committed (like cache or temp data).
+It usually contains:
+/cache/
